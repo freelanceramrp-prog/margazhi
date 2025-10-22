@@ -835,14 +835,14 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
   };
 
   try {
-    const response = await fetch(
-      "https://script.google.com/macros/s/AKfycbx5lnaUndR0Ou7GQeb2T0PB9QbCsWA6tj4_GNb3KRIfewMkIkCMflkUya2-19xNgnSh/exec",
-      {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: { "Content-Type": "application/json" },
-      }
-    );
+const response = await fetch(
+  "https://script.google.com/macros/s/AKfycbxbzUh2JK6yvETqBiY3WrAKxb2mUvp7xcvD6GXSutan_t9F-vtqDiiZG7FoSgMiIMhr_w/exec",  // your new proxy link here
+  {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: { "Content-Type": "application/json" },
+  }
+);
 
     const result = await response.json();
 
@@ -897,6 +897,7 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
 
 </body>
 </html>
+
 
 
 
