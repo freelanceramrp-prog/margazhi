@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Margazhi - From Marketing to Meaning</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background: #f9f8f4;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #2e2e2e;
+    }
+    h1, h2 {
+      font-family: "Georgia", serif;
+      color: #355e3b;
+      text-align: center;
+      user-select: none;
+    }
+    h1 {
+      margin: 2.0rem 0 1.5rem 0;
+    }
+    h2 {
+      margin: 1.5rem 0 1.0rem 0;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    /* Hero/logo area */
+    .hero {
+      background: #dbe6d4;
+      padding: 2rem 1rem 1.1rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .hero-subtext {
+      color: #3b4a28;
+      font-size: 1.18rem;
+      max-width: 600px;
+      margin: auto;
+      margin-bottom: 1.3rem;
+      font-weight: 500;
+    }
+    .mb-4 {
+      margin-bottom: 1.5rem !important;
+    }
+    .mx-auto {
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+    .d-block {
+      display: block !important;
+    }
+    /* Framework/Venn Section */
+    .framework-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 420px;
+      width: 100%;
+      margin-bottom: 1.8rem;
+    }
+    .venn-container {
+      position: relative;
+      width: 370px;
+      height: 300px;
+      margin: 0 auto 1.4rem auto;
+      user-select: none;
+    }
+    .circle {
+      position: absolute;
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      border: 6px solid #fff;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+      font-family: Georgia, serif;
+      font-size: 1.45rem;
+      font-weight: 900;
+      color: #fff;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      line-height: 1.23;
+      padding: 1.1rem 0.6rem 0.7rem 0.6rem;
+      box-sizing: border-box;
+      transition: transform 0.2s, box-shadow 0.2s;
+      user-select: none;
+      background-clip: padding-box;
+      background-origin: padding-box;
+    }
+    .circle:focus,
+    .circle:hover {
+      transform: scale(1.07);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.20);
+      outline: 3px solid #7a5c2e;
+      outline-offset: 5px;
+    }
+    .circle1 {
+      background-color: #588048;
+      left: 7px;
+      top: 105px;
+      z-index: 2;
+    }
+    .circle2 {
+      background-color: #c7a551;
+      left: 193px;
+      top: 105px;
+      z-index: 2;
+    }
+    .circle3 {
+      background-color: #90764f;
+      left: 100px;
+      top: 13px;
+      z-index: 3;
+    }
+    @media(max-width:600px){
+      .venn-container{
+        width: 98vw;
+        height: 62vw;
+      }
+      .circle{
+        width:30vw;
+        height:30vw;
+        font-size:4vw;
+        padding:2vw 1vw;
+      }
+      .circle1{ left: 2vw; top:18vw;}
+      .circle2{ left:52vw; top:18vw;}
+      .circle3{ left:26vw; top:2vw;}
+    }
+
+    /* Beautified "What We Do Differently" double-panel section */
+    .different-section {
+      background: #f9f8f4;
+      text-align: center;
+      padding: 2.2rem 0 1.4rem 0;
+      margin-bottom: 1.3rem;
+    }
+    .different-section h2 {
+      font-family: Georgia, serif;
+      color: #355e3b;
+      margin-bottom: 1.7rem;
+      font-size: 2.1rem;
+      font-weight: 600;
+    }
+    .diff-compare-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      gap: 0;
+      position: relative;
+      width: 99%;
+      max-width: 830px;
+      margin: 0 auto;
+      background: transparent;
+      min-height: 290px;
+    }
+    .diff-panel {
+      background: #fff;
+      flex: 1 1 320px;
+      padding: 1.85rem 2rem 1.05rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 24px;
+      box-shadow: 0 7px 28px rgba(75,80,62,0.11), 0 1.5px 5px rgba(96,110,76,0.06);
+      min-width: 250px;
+      max-width: 400px;
+    }
+    .diff-divider {
+      width: 4px;
+      background: linear-gradient(180deg, #b5c398 45%, #f1e8d6 100%);
+      position: absolute;
+      top: 22px;
+      bottom: 22px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 12px;
+      z-index: 1;
+    }
+    .diff-icon {
+      font-size: 2.3rem;
+      margin-bottom: 0.35em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .diff-title {
+      font-family: Georgia, serif;
+      font-size: 1.28rem;
+      font-weight: 800;
+      margin-bottom: 0.62em;
+      color: #634e30;
+      letter-spacing: 0.01em;
+    }
+    .diff-green {
+      color: #4d6f3f !important;
+    }
+    .diff-panel ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+    }
+    .diff-panel ul li {
+      font-size: 1.09rem;
+      padding: 0.5em 0;
+      margin: 0;
+      color: #2e2e2e;
+    }
+    .diff-panel ul li span {
+      display: block;
+      font-family: inherit;
+      font-size: inherit;
+    }
+    @media (max-width:900px) {
+      .diff-compare-wrapper {
+        flex-direction: column;
+        max-width: 97vw;
+        min-width: 0;
+        box-shadow: none;
+        margin-top: 0;
+        background: transparent;
+      }
+      .diff-divider {
+        position: relative;
+        width: 50%;
+        height: 4px;
+        left: 25%;
+        right: 0;
+        top: auto;
+        bottom: auto;
+        margin: 14px 0;
+        background: linear-gradient(90deg, #b5c398 45%, #f1e8d6 100%);
+        transform: none;
+        border-radius: 8px;
+      }
+      .diff-panel {
+        border-radius: 18px !important;
+        max-width: 99vw;
+        margin-bottom: 0.5rem;
+        min-width: 0;
+        padding: 2rem 6vw 1.2rem 6vw;
+      }
+    }
+    .diff-tagline {
+      margin-top: 2rem;
+      font-size: 1.17rem;
+      font-weight: 600;
+    }
+    .diff-bold {
+      font-family: Georgia, serif;
+      font-weight: 800;
+      color: #141d0c;
+      letter-spacing: 0.01em;
+    }
+    .diff-tagline .diff-green {
+      color: #49692f;
+      font-weight: 800;
+      font-size: 1.13rem;
+    }
+
+    /* Margazhi Method Modern Cards */
+    .method-section {
+      padding: 2.3rem 0 1rem 0;
+      background: #f9f8f4;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .green-head {
+      color: #4d6f3f;
+    }
+    .method-lead {
+      font-size: 1.14rem;
+      font-weight: 500;
+      margin-bottom: 13px;
+    }
+    .method-muted {
+      color: #897e6a;
+      font-size: 1.01rem;
+      letter-spacing: 0.02em;
+    }
+    .method-grid {
+      display: flex;
+      gap: 2.15rem;
+      justify-content: center;
+      align-items: stretch;
+      margin-top: 1.95rem;
+      flex-wrap: wrap;
+    }
+    .method-card {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 6px 32px rgba(52,70,45,0.11), 0 1.5px 6px rgba(83,100,64,0.07);
+      padding: 1.65rem 2rem 1.1rem 2rem;
+      min-width: 270px;
+      max-width: 340px;
+      flex: 1 1 290px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.21s cubic-bezier(.46,.07,.53,.75), box-shadow 0.17s;
+      margin-bottom: 0.85rem;
+    }
+    .method-card:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 16px 38px rgba(52,70,45,0.17), 0 2px 8px rgba(83,100,64,0.08);
+      z-index: 2;
+    }
+    .method-emoji {
+      font-size: 2.15rem;
+      margin-bottom: 4px;
+    }
+    .method-title {
+      font-size: 1.30rem;
+      font-family: Georgia, serif;
+      font-weight: 700;
+      margin-bottom: 0.7rem;
+    }
+    .method-card ul {
+      text-align: left;
+      margin: 0 0 0.18rem 0;
+      padding-left: 1.05rem;
+      font-size: 0.99rem;
+      color: #36382f;
+    }
+    .method-desc {
+      color: #6c8a41;
+      font-size: 0.98rem;
+      font-style: italic;
+      margin: 0.63rem 0 0.15rem 0;
+    }
+    .method-quote {
+      font-size: 0.94rem;
+      color: #948d77;
+      margin-top: 0.17rem;
+      font-style: italic;
+    }
+    .method-create .method-title { color: #507142;}
+    .method-deliver .method-title { color: #a68333;}
+    .method-capture .method-title { color: #90764f;}
+    @media (max-width:1024px){
+      .method-grid { gap:1.0rem; }
+    }
+    @media (max-width:800px){
+      .method-grid { flex-direction: column; align-items:center; }
+      .method-card { max-width:92vw;}
+    }
+    footer {
+      margin-top: 2rem;
+    }
+/* Navbar base and positioning */
+.custom-navbar {
+  background-color: #f4f5ef;
+  box-shadow: 0 2px 8px rgba(75, 80, 62, 0.1);
+  font-family: 'Georgia', serif;
+  font-weight: 600;
+  font-size: 1.15rem;
+  padding: 0.75rem 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1050;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Logo sizing */
+.navbar-logo {
+  height: 45px;
+  transition: transform 0.2s ease;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.05);
+}
+
+/* Link styles */
+.custom-navbar .nav-link {
+  color: #4d6f3f;
+  margin-left: 1.3rem;
+  transition: color 0.25s ease;
+}
+
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link:focus {
+  color: #6da34d;
+  text-decoration: none;
+}
+
+/* Active state highlight */
+.custom-navbar .nav-link.active {
+  color: #355e3b;
+  font-weight: 700;
+  border-bottom: 2px solid #6da34d;
+  padding-bottom: 3px;
+}
+
+/* Toggler (hamburger) adjustments */
+.navbar-toggler {
+  border: none;
+  padding: 0.15rem 0.4rem;
+}
+
+.navbar-toggler-icon {
+  filter: brightness(40%);
+}
+
+.navbar-toggler-icon:hover {
+  filter: brightness(65%);
+}
+
+/* Add padding to body top to prevent content hiding */
+body {
+  padding-top: 70px;
+}
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg custom-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="#hero">
+      <img src="logo.png" alt="Margazhi Logo" class="navbar-logo" />
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#hero">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#who-we-are">About us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  <header class="hero" role="banner" aria-label="Website introduction hero">
+      <h1>We don’t run ads. We build realities.</h1>
+    <p class="hero-subtext">
+      Margazhi helps businesses uncover their strengths, fix their blind spots, and evolve into scalable, profitable models — using a 3-part framework:
+      <strong>Value Creation, Value Delivery, and Value Capturing.</strong>
+    </p>
+    <a href="#framework" class="btn btn-dark btn-lg">Explore How It Works →</a>
+  </header>
+
+  <!-- ENHANCED "WHAT WE DO DIFFERENTLY" SECTION -->
+  <section class="different-section">
+    <h2>What We Do Differently</h2>
+    <div class="diff-compare-wrapper">
+      <div class="diff-panel diff-left">
+        <div class="diff-icon">🎨</div>
+        <div class="diff-title">Traditional <br>Marketing</div>
+        <ul>
+          <li><span>Run ads, design posts, chase clicks</span></li>
+          <li><span>Focus on awareness</span></li>
+          <li><span>Talk about products</span></li>
+          <li><span>Spend budgets</span></li>
+        </ul>
+      </div>
+      <div class="diff-panel diff-right">
+        <div class="diff-icon">
+          <img src="logo.png" alt="Margazhi Logo" style="height:2.5rem;vertical-align:middle;border-radius:7px;">
+        </div>
+        <div class="diff-title diff-green">Margazhi</div>
+        <ul>
+          <li><span>Diagnose your <b>business model</b></span></li>
+          <li><span>Focus on <em>alignment</em></span></li>
+          <li><span>Talk about <em>profit engines</em></span></li>
+          <li><span>Optimize <b>resources</b></span></li>
+        </ul>
+      </div>
+      <div class="diff-divider"></div>
+    </div>
+    <div class="diff-tagline">
+      <span class="diff-bold">We are not ad-makers.</span>
+      <br>
+      <span class="diff-green diff-bold">We are <em>model makers.</em></span>
+    </div>
+  </section>
+  <!-- END ENHANCED DIFFERENTIATORS SECTION -->
+
+  <!-- BEAUTIFIED MARGAZHI METHOD SECTION -->
+  <section class="method-section">
+    <h2>Our Approach — <span class="green-head">The Margazhi Method</span></h2>
+    <p class="method-lead">
+      Every business is built on three invisible forces.<br>
+      <span class="method-muted">We make them visible, measurable, and scalable.</span>
+    </p>
+    <div class="method-grid">
+      <div class="method-card method-create">
+        <div class="method-emoji">🌱</div>
+        <div class="method-title">Value Creation</div>
+        <ul>
+          <li>Customer Problems &amp; Needs</li>
+          <li>Target Segments</li>
+          <li>UVP Clarity</li>
+          <li>Product–Market Fit</li>
+          <li>Innovation</li>
+          <li>Time to Market</li>
+        </ul>
+        <div class="method-desc">Insights that reveal why your customers buy and why they don’t.</div>
+        <div class="method-quote">“Your best-selling product may not be your best-fit product.”</div>
+      </div>
+      <div class="method-card method-deliver">
+        <div class="method-emoji">🚚</div>
+        <div class="method-title">Value Delivery</div>
+        <ul>
+          <li>Channel Effectiveness</li>
+          <li>On-Time Delivery</li>
+          <li>Customer Experience</li>
+          <li>Net Promoter Score</li>
+          <li>Retention Rate</li>
+        </ul>
+        <div class="method-desc">A roadmap to improve reach, reliability, and relationships.</div>
+        <div class="method-quote">“Scaling starts when every delivery feels like a promise kept.”</div>
+      </div>
+      <div class="method-card method-capture">
+        <div class="method-emoji">💰</div>
+        <div class="method-title">Value Capturing</div>
+        <ul>
+          <li>Price Realisation</li>
+          <li>Revenue Stream Diversity</li>
+          <li>Recurring Revenue</li>
+          <li>CLTV : CAC Ratio</li>
+          <li>Throughput</li>
+          <li>Fixed Cost Coverage</li>
+        </ul>
+        <div class="method-desc">Clarity on where your profits leak and how to seal them.</div>
+        <div class="method-quote">“Growth isn’t more sales. It’s better capture of what you already create.”</div>
+      </div>
+    </div>
+  </section>
+
+<!-- Who We Are — Born from Observation -->
+<section style="background:#f9f9f1; padding-top:40px; padding-bottom:30px;">
+  <div class="container-lg">
+    <h2 class="text-center fw-bold mb-0" style="font-family:'Georgia',serif; font-size:2.4rem; color:#406044; line-height:1.2;">
+      Who We Are &mdash; Born from Observation
+    </h2>
+    <div class="mx-auto" style="max-width:700px; color:#414534; font-size:1.18rem; line-height:1.7;">
+      <p>
+        Margazhi was born not from the world of advertising &mdash; but from the quiet observation of how real businesses grow.<br>
+        We’ve seen brands spend crores on ads without ever fixing the fundamentals.<br>
+        We exist to change that.
+      </p>
+      <p class="fst-italic" style="color:#336040;">
+        Because scaling a business is not about spending more &mdash; it’s about seeing deeper.
+      </p>
+      <p style="margin-top:10px;"><span class="fw-bold" style="color:#355332;">Our Ethos:</span> Curiosity before Consultancy.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Let's Talk — Not a Sales Call, a Strategy Call -->
+<section style="background:#f4f5ef; padding-top:48px; padding-bottom:48px;">
+  <div class="container-lg">
+    <h2 class="text-center fw-bold mb-3" style="font-family:'Georgia',serif; font-size:2.6rem; color:#406044;">
+      Let’s Talk &mdash; Not a Sales Call, a Strategy Call
+    </h2>
+    <div class="mx-auto text-center" style="max-width:650px; color:#414534; font-size:1.12rem;">
+      <p>This isn’t about pitching packages.<br>
+      It’s about discovering where your business stands.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SELF ASSESSMENT BUTTON -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<div class="text-center my-5">
+  <button class="btn btn-success btn-lg px-4 py-2" data-bs-toggle="modal" data-bs-target="#selfAssessModal">
+    🧭 Take Self Assessment
+  </button>
+</div>
+
+
+<!-- 🌿 SELF-ASSESSMENT MODAL — MARGAZHI STYLED -->
+<div class="modal fade" id="selfAssessModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content shadow-lg" style="border-radius:18px; overflow:hidden;">
+      
+      <!-- HEADER -->
+      <div class="modal-header text-black" style="background:#FADADD;">
+        <div class="d-flex align-items-center w-100">
+          <img src="logo.png" alt="Margazhi Logo" style="height:40px; border-radius:8px; margin-right:10px;">
+          <h5 class="modal-title" style="font-family:Georgia,serif; font-weight:700;">
+            Self-Assessment — Margazhi Business Readiness
+          </h5>
+        </div>
+        <button type="button" class="btn-close btn-close-black" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <!-- BODY -->
+      <div class="modal-body" style="background:#f9f8f4; padding:30px;">
+        <form id="assessmentForm">
+
+          <!-- Contact info -->
+          <div class="row g-3 mb-3">
+            <div class="col-md-4">
+              <label class="form-label fw-semibold text-success">Name</label>
+              <input type="text" id="assessName" class="form-control" placeholder="Your Name" required>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label fw-semibold text-success">Phone</label>
+              <input type="text" id="assessPhone" class="form-control" placeholder="Your Phone" required>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label fw-semibold text-success">Email</label>
+              <input type="email" id="assessEmail" class="form-control" placeholder="Your Email" required>
+            </div>
+          </div>
+
+          <!-- Progress -->
+          <div class="progress mb-3" style="height:10px;">
+            <div class="progress-bar bg-success" id="progressBar" style="width:0%;"></div>
+          </div>
+
+          <!-- Questions Container -->
+          <div id="questions"></div>
+
+          <!-- Submit -->
+          <div class="text-center mt-4">
+            <button type="submit" class="btn btn-success px-4 py-2" style="font-size:1.1rem;">
+              Submit &amp; Show Score
+            </button>
+          </div>
+        </form>
+
+        <!-- Result Box -->
+        <div id="result-box" class="mt-4 text-center" style="display:none; background:#eaf3e1; border-radius:12px; padding:20px;">
+          <h4 id="score-text" style="color:#355e3b; font-weight:700;"></h4>
+          <p id="feedback" style="font-size:1.1rem;"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 🌿 Slider Style -->
+<style>
+.slider-wrapper {
+  background:#fff;
+  border-radius:10px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.08);
+  padding:15px 20px;
+  margin-bottom:15px;
+}
+.slider-label {
+  font-weight:600;
+  margin-bottom:5px;
+}
+.range-value {
+  font-weight:700;
+  color:#355e3b;
+  min-width:30px;
+  text-align:center;
+}
+input[type=range] {
+  width:100%;
+  height:6px;
+  border-radius:5px;
+  background:#d7e5d0;
+  outline:none;
+  accent-color:#4d6f3f;
+}
+input[type=range]::-webkit-slider-thumb {
+  background:#4d6f3f;
+  border-radius:50%;
+  cursor:pointer;
+}
+</style>
+
+<script>
+const assessmentQuestions = [
+  "We have clearly defined customer segments.",
+  "Our products/services solve a genuine customer problem.",
+  "We have a strong unique value proposition (UVP).",
+  "Our marketing and sales teams are aligned in goals.",
+  "We track customer satisfaction and feedback regularly.",
+  "Our delivery process is efficient and reliable.",
+  "We have recurring customers or repeat revenue streams.",
+  "We understand our unit economics (cost vs value).",
+  "Our pricing reflects the value we deliver.",
+  "We continuously innovate and adapt to market changes."
+];
+
+const questionsDiv = document.getElementById('questions');
+assessmentQuestions.forEach((q, i) => {
+  const wrapper = document.createElement('div');
+  wrapper.className = 'slider-wrapper';
+  wrapper.innerHTML = `
+    <div class="slider-label mb-2"><strong>${i+1}. ${q}</strong></div>
+    <div class="d-flex align-items-center">
+      <input type="range" class="form-range flex-grow-1" min="1" max="5" value="3" step="1" name="q${i}" required>
+      <span class="range-value ms-3">3</span>
+    </div>
+    <div class="d-flex justify-content-between small text-muted mt-1">
+      <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+    </div>`;
+  questionsDiv.appendChild(wrapper);
+});
+
+questionsDiv.addEventListener('input', e => {
+  if (e.target.type === 'range') {
+    e.target.nextElementSibling.textContent = e.target.value;
+    updateProgress();
+  }
+});
+
+function updateProgress() {
+  const sliders = document.querySelectorAll('#questions input[type=range]');
+  let filled = 0;
+  sliders.forEach(s => { if (s.value) filled++; });
+  const progress = (filled / assessmentQuestions.length) * 100;
+  document.getElementById('progressBar').style.width = progress + '%';
+}
+
+document.getElementById("assessmentForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const name = document.getElementById("assessName").value;
+  const phone = document.getElementById("assessPhone").value;
+  const email = document.getElementById("assessEmail").value;
+  const answers = Array.from(document.querySelectorAll("#questions input[type=range]")).map(r => parseInt(r.value));
+  const total = answers.reduce((a,b)=>a+b,0);
+  const max = assessmentQuestions.length * 5;
+  const score = Math.round((total/max)*100);
+
+  let feedback = "";
+  if(score >= 80) feedback = "🌿 Excellent! Your business model is strong and well-aligned.";
+  else if(score >= 60) feedback = "⚙️ Good! You have a solid foundation; refine delivery and capturing strategies.";
+  else if(score >= 40) feedback = "🚧 Moderate. Focus on diagnosing weak areas—especially value capture.";
+  else feedback = "💡 You’re in the discovery phase. Start by clarifying your value creation process.";
+
+  // Display result
+  document.getElementById("result-box").style.display = "block";
+  document.getElementById("score-text").innerHTML = `Your Score: <strong>${score}%</strong>`;
+  document.getElementById("feedback").textContent = feedback;
+
+  // Save to Google Sheet
+  try {
+    const res = await fetch("YOUR_WEB_APP_URL_HERE?action=assessment", {
+      method: "POST",
+      body: JSON.stringify({
+        name, phone, email, answers, score, feedback, questions: assessmentQuestions
+      }),
+      headers: { "Content-Type": "application/json" },
+    });
+    const result = await res.json();
+    if(result.success) console.log("✅ Assessment saved successfully");
+  } catch(err) {
+    console.error("⚠️ Error saving assessment:", err);
+  }
+});
+</script>
+  <!-- END BEAUTIFIED METHOD SECTION -->
+
+<!-- CONTACT SECTION -->
+<section id="contact" style="background:#fdf6ef; padding:60px 0;">
+  <div class="container-lg">
+    <div class="row align-items-start justify-content-center g-4">
+      
+      <!-- Contact Info -->
+      <div class="col-lg-5 col-md-6">
+        <h2 style="color:#355e3b; font-family:'Georgia',serif; font-weight:700; margin-bottom:20px;">
+          Get in Touch
+        </h2>
+        <p style="color:#4c4e3e; font-size:1.1rem; margin-bottom:1.2rem;">
+          Have a question or want to explore how Margazhi can help your business evolve? Reach out to us.
+        </p>
+        <div style="font-size:1.05rem; color:#333;">
+          <p><span style="font-size:1.5rem;">📞</span> &nbsp; <strong>+91 9488514922</strong></p>
+          <p><span style="font-size:1.5rem;">✉️</span> &nbsp; <strong>margazhimarketing@gmail.com</strong></p>
+          <p><span style="font-size:1.5rem;">📍</span> &nbsp; 
+            <strong>45, Kamatchiamman Koil Street,<br>Puducherry - 605110</strong>
+          </p>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="col-lg-6 col-md-6">
+        <form id="contactForm" style="background:#fff; border-radius:16px; box-shadow:0 6px 20px rgba(0,0,0,0.08); padding:25px;">
+  <div class="row g-3">
+    <div class="col-md-6">
+      <label class="form-label fw-semibold">Your Name</label>
+      <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+    </div>
+    <div class="col-md-6">
+      <label class="form-label fw-semibold">Your Phone</label>
+      <input type="text" id="phone" class="form-control" placeholder="Enter your phone" required>
+    </div>
+    <div class="col-md-6">
+      <label class="form-label fw-semibold">Your Email</label>
+      <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+    </div>
+    <div class="col-md-6">
+      <label class="form-label fw-semibold">Subject</label>
+      <input type="text" id="subject" class="form-control" placeholder="Enter subject" required>
+    </div>
+    <div class="col-12">
+      <label class="form-label fw-semibold">Your Message</label>
+      <textarea id="message" class="form-control" rows="4" placeholder="Write your message..." required></textarea>
+    </div>
+  </div>
+  <div class="text-center mt-4">
+    <button type="submit" class="btn btn-success px-4 py-2" style="font-size:1.05rem;">
+      Send Message
+    </button>
+  </div>
+</form>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const data = {
+    name: document.getElementById("name").value,
+    phone: document.getElementById("phone").value,
+    email: document.getElementById("email").value,
+    subject: document.getElementById("subject").value,
+    message: document.getElementById("message").value
+  };
+
+  try {
+    const response = await fetch("YOUR_WEB_APP_URL_HERE", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: { "Content-Type": "application/json" },
+    });
+    const result = await response.json();
+
+    if (result.success) {
+      alert("✅ Message sent successfully! We'll get back to you soon.");
+      document.getElementById("contactForm").reset();
+    } else {
+      alert("⚠️ Something went wrong. Please try again.");
+    }
+  } catch (err) {
+    alert("❌ Unable to send message. Please check your internet connection.");
+    console.error(err);
+  }
+});
+</script>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GOOGLE MAP -->
+<section style="padding:0; margin:0;">
+  <iframe 
+    src="https://www.google.com/maps?q=45+Kamatchiamman+Koil+Street,+Puducherry,+605110&output=embed" 
+    width="100%" 
+    height="400" 
+    style="border:0;" 
+    allowfullscreen="" 
+    loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</section>
+
+<style>
+#contactForm input, #contactForm textarea {
+  background-color: #f3faf2;
+  border: 1px solid #dce3d8;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: #333;
+  transition: all 0.2s ease;
+}
+#contactForm input:focus, #contactForm textarea:focus {
+  border-color: #6da34d;
+  box-shadow: 0 0 0 0.15rem rgba(109,163,77,0.25);
+}
+#contactForm button:hover {
+  background-color: #588048 !important;
+}
+</style>
+
+</body>
+</html>
